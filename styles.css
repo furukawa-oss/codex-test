@@ -1,0 +1,109 @@
+:root {
+  color-scheme: light;
+  font-family:
+    "Hiragino Sans", "Yu Gothic", "Meiryo", system-ui, -apple-system,
+    BlinkMacSystemFont, sans-serif;
+  color: #17324d;
+  background: #f4f8fb;
+  font-synthesis: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.hero {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  padding: 32px 20px;
+  background:
+    radial-gradient(circle at 15% 20%, rgb(65 153 217 / 14%), transparent 30%),
+    radial-gradient(circle at 85% 80%, rgb(70 184 157 / 12%), transparent 32%),
+    #f4f8fb;
+}
+
+.card {
+  width: min(100%, 680px);
+  padding: clamp(48px, 8vw, 80px) clamp(24px, 7vw, 72px);
+  text-align: center;
+  background: rgb(255 255 255 / 92%);
+  border: 1px solid #dce8f0;
+  border-radius: 24px;
+  box-shadow: 0 24px 70px rgb(32 78 111 / 12%);
+}
+
+.eyebrow {
+  margin: 0 0 18px;
+  color: #2687b8;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+h1 {
+  margin: 0;
+  color: #17324d;
+  font-size: clamp(2.25rem, 7vw, 4rem);
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+}
+
+.message {
+  margin: 24px 0 36px;
+  color: #587087;
+  font-size: clamp(1rem, 2.5vw, 1.15rem);
+  line-height: 1.8;
+}
+
+.contact-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 180px;
+  min-height: 52px;
+  padding: 14px 30px;
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  background: #177da8;
+  border-radius: 999px;
+  box-shadow: 0 10px 24px rgb(23 125 168 / 24%);
+  transition:
+    background-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.contact-button:hover {
+  background: #11698f;
+  box-shadow: 0 12px 28px rgb(23 125 168 / 30%);
+  transform: translateY(-2px);
+}
+
+.contact-button:focus-visible {
+  outline: 3px solid #8bd6f2;
+  outline-offset: 4px;
+}
+
+@media (max-width: 480px) {
+  .card {
+    border-radius: 18px;
+  }
+
+  .contact-button {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-button {
+    transition: none;
+  }
+}
