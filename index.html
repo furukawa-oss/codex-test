@@ -3,18 +3,119 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Codexで作成したシンプルなWebページです。" />
-    <title>はじめてのCodex</title>
+    <meta name="description" content="Zenken社内向け営業支援ダッシュボード" />
+    <title>Sales Compass | Zenken</title>
     <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
   </head>
   <body>
-    <main class="hero">
-      <section class="card" aria-labelledby="page-title">
-        <p class="eyebrow">MY FIRST PROJECT</p>
-        <h1 id="page-title">はじめてのCodex</h1>
-        <p class="message">CodexでWebページを作成しました</p>
-        <a class="contact-button" href="mailto:hello@example.com">お問い合わせ</a>
-      </section>
-    </main>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <a class="brand" href="#" aria-label="Sales Compass ホーム">
+          <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span><strong>Sales Compass</strong><small>ZENKEN INTERNAL</small></span>
+        </a>
+
+        <nav class="main-nav" aria-label="メインナビゲーション">
+          <p class="nav-label">WORKSPACE</p>
+          <a class="nav-item active" href="#overview" aria-current="page">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 13h6V4H4v9Zm0 7h6v-4H4v4Zm10 0h6v-9h-6v9Zm0-16v4h6V4h-6Z"/></svg>
+            ダッシュボード
+          </a>
+          <a class="nav-item" href="#customers">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3Zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3Zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5C15 14.17 10.33 13 8 13Zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5Z"/></svg>
+            顧客一覧
+            <span class="nav-count">24</span>
+          </a>
+          <a class="nav-item" href="#tasks">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1s-2.4.84-2.82 2H5a2 2 0 0 0-2 2v15c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5a2 2 0 0 0-2-2Zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1Zm-1 15-4-4 1.41-1.41L11 15.17l5.59-5.59L18 11l-7 7Z"/></svg>
+            タスク
+            <span class="alert-dot">3</span>
+          </a>
+          <a class="nav-item" href="#reports">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3 13h2v8H3v-8Zm4-6h2v14H7V7Zm4 3h2v11h-2V10Zm4-8h2v19h-2V2Zm4 5h2v14h-2V7Z"/></svg>
+            レポート
+          </a>
+          <p class="nav-label second">SYSTEM</p>
+          <a class="nav-item" href="#sync">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.96-.69 2.79l1.46 1.46A7.94 7.94 0 0 0 20 12c0-4.42-3.58-8-8-8Zm-6 8c0-1.01.25-1.96.69-2.79L5.23 7.75A7.94 7.94 0 0 0 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3c-3.31 0-6-2.69-6-6Z"/></svg>
+            データ同期
+            <span class="status-tick">✓</span>
+          </a>
+        </nav>
+
+        <div class="sidebar-help">
+          <span class="help-icon">?</span>
+          <div><strong>お困りですか？</strong><a href="mailto:it-support@zenken.co.jp">ITサポートへ連絡</a></div>
+        </div>
+        <p class="version">Sales Compass v1.0</p>
+      </aside>
+
+      <main class="main-content" id="overview">
+        <header class="topbar">
+          <div class="mobile-brand">Sales Compass</div>
+          <div class="top-actions">
+            <button class="icon-button" type="button" aria-label="通知"><svg viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-5-5.91V1h-2v1.09A6 6 0 0 0 6 8c0 7-3 7-3 9h18c0-2-3-2-3-9Zm-8 11a2 2 0 0 0 4 0h-4Z"/></svg><i></i></button>
+            <div class="user-menu">
+              <span class="avatar">佐</span>
+              <div><strong>佐藤 健太</strong><small>CSチーム ・ 担当者</small></div>
+              <button type="button" aria-label="ユーザーメニュー">⌄</button>
+            </div>
+          </div>
+        </header>
+
+        <div class="page-wrap">
+          <section class="welcome-row">
+            <div><p class="today">2026年10月2日 金曜日</p><h1>おはようございます、佐藤さん</h1><p>担当顧客の状況を確認して、今日のアクションを始めましょう。</p></div>
+            <div class="sync-pill"><span>↻</span><div><small>最終データ更新</small><strong>本日 09:02</strong></div><button type="button" id="refreshButton">更新</button></div>
+          </section>
+
+          <section class="kpi-grid" aria-label="主要指標">
+            <article class="kpi-card"><div class="kpi-icon purple">◎</div><div><p>担当顧客数</p><strong>24 <small>社</small></strong><span class="trend up">↑ 2社</span><em>先月比</em></div></article>
+            <article class="kpi-card"><div class="kpi-icon blue">¥</div><div><p>今月売上見込</p><strong>¥ 18.4 <small>百万円</small></strong><span class="trend up">↑ 12.5%</span><em>先月比</em></div></article>
+            <article class="kpi-card"><div class="kpi-icon orange">✓</div><div><p>対応タスク</p><strong>8 <small>件</small></strong><span class="trend warning">3件 期限間近</span></div></article>
+            <article class="kpi-card"><div class="kpi-icon teal">◇</div><div><p>平均ヘルススコア</p><strong>78 <small>/ 100</small></strong><span class="trend up">↑ 4 pt</span><em>先月比</em></div></article>
+          </section>
+
+          <section class="content-grid">
+            <article class="panel sales-panel">
+              <div class="panel-heading"><div><h2>売上推移</h2><p>担当顧客の月別売上実績</p></div><div class="legend"><span><i class="actual"></i>実績</span><span><i class="target"></i>目標</span></div></div>
+              <div class="chart" aria-label="4月から9月までの売上推移グラフ">
+                <div class="y-axis"><span>20M</span><span>15M</span><span>10M</span><span>5M</span><span>0</span></div>
+                <svg viewBox="0 0 650 220" preserveAspectRatio="none" role="img">
+                  <defs><linearGradient id="area" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6b5ce7" stop-opacity=".2"/><stop offset="1" stop-color="#6b5ce7" stop-opacity="0"/></linearGradient></defs>
+                  <g class="grid-lines"><path d="M0 15H650M0 62H650M0 109H650M0 156H650M0 203H650"/></g>
+                  <path class="area" d="M10 165 C60 150 85 145 125 137 S205 125 245 130 S325 106 365 113 S445 80 485 87 S565 51 640 48 L640 203 L10 203Z"/>
+                  <path class="target-line" d="M10 153 L125 140 L245 119 L365 102 L485 79 L640 64"/>
+                  <path class="actual-line" d="M10 165 C60 150 85 145 125 137 S205 125 245 130 S325 106 365 113 S445 80 485 87 S565 51 640 48"/>
+                  <g class="points"><circle cx="10" cy="165" r="4"/><circle cx="125" cy="137" r="4"/><circle cx="245" cy="130" r="4"/><circle cx="365" cy="113" r="4"/><circle cx="485" cy="87" r="4"/><circle cx="640" cy="48" r="4"/></g>
+                </svg>
+                <div class="x-axis"><span>4月</span><span>5月</span><span>6月</span><span>7月</span><span>8月</span><span>9月</span></div>
+              </div>
+            </article>
+
+            <article class="panel task-panel" id="tasks">
+              <div class="panel-heading"><div><h2>今日のタスク</h2><p>優先度の高い順</p></div><a href="#tasks">すべて見る <span>›</span></a></div>
+              <div class="task-list">
+                <label class="task-item"><input type="checkbox"><span class="checkmark"></span><span class="task-body"><span><em class="priority high">重要</em><time>10:00</time></span><strong>月次レポートの提出</strong><small>株式会社アークテック</small></span></label>
+                <label class="task-item"><input type="checkbox"><span class="checkmark"></span><span class="task-body"><span><em class="priority medium">商談</em><time>14:30</time></span><strong>契約更新ミーティング</strong><small>光栄システム株式会社</small></span></label>
+                <label class="task-item"><input type="checkbox"><span class="checkmark"></span><span class="task-body"><span><em class="priority normal">連絡</em><time>17:00</time></span><strong>導入状況のフォローアップ</strong><small>東都マーケティング株式会社</small></span></label>
+              </div>
+            </article>
+          </section>
+
+          <section class="panel customer-panel" id="customers">
+            <div class="panel-heading"><div><h2>要フォロー顧客</h2><p>ヘルススコアや活動状況から、対応が必要な顧客を表示しています</p></div><a href="#customers">顧客一覧を見る <span>›</span></a></div>
+            <div class="table-wrap"><table><thead><tr><th>顧客名</th><th>ヘルススコア</th><th>ステータス</th><th>最終コンタクト</th><th>次回アクション</th><th></th></tr></thead><tbody>
+              <tr><td><span class="company-logo red">A</span><div><strong>株式会社アークテック</strong><small>IT・通信</small></div></td><td><div class="score"><span><i style="width:42%"></i></span><b class="low">42</b></div></td><td><em class="status danger">要注意</em></td><td><strong>14日前</strong><small>2026/09/18</small></td><td><strong>月次レポート提出</strong><small>本日 10:00</small></td><td><button class="more" aria-label="詳細">•••</button></td></tr>
+              <tr><td><span class="company-logo yellow">光</span><div><strong>光栄システム株式会社</strong><small>システム開発</small></div></td><td><div class="score"><span><i style="width:61%"></i></span><b class="mid">61</b></div></td><td><em class="status caution">経過観察</em></td><td><strong>7日前</strong><small>2026/09/25</small></td><td><strong>契約更新ミーティング</strong><small>本日 14:30</small></td><td><button class="more" aria-label="詳細">•••</button></td></tr>
+              <tr><td><span class="company-logo green">T</span><div><strong>東都マーケティング株式会社</strong><small>広告・マーケティング</small></div></td><td><div class="score"><span><i style="width:68%"></i></span><b class="mid">68</b></div></td><td><em class="status caution">経過観察</em></td><td><strong>5日前</strong><small>2026/09/27</small></td><td><strong>導入状況フォロー</strong><small>本日 17:00</small></td><td><button class="more" aria-label="詳細">•••</button></td></tr>
+            </tbody></table></div>
+          </section>
+          <p class="security-note"><span>🔒</span> このシステムは Zenken Google Workspace アカウントで保護されています</p>
+        </div>
+      </main>
+    </div>
+    <div class="toast" id="toast" role="status" aria-live="polite">データを最新の状態に更新しました</div>
   </body>
 </html>
